@@ -6,6 +6,7 @@ const revealGroups = [
   [".included-copy", ".site-mockup"],
   [".cta-band"],
   [".demo-visual", ".demo-copy"],
+  [".founder-copy", ".founder-card"],
   ["#process .section-heading"],
   [".process-list li"],
   [".pricing-copy", ".pricing-card"],
