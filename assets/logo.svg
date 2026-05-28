@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">AutoDetailingSites.com</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="20" width="168" height="94" rx="16" stroke="#F8FAFC" stroke-width="8"/>
+    <circle cx="35" cy="42" r="6" fill="#14B8A6" stroke="none"/>
+    <circle cx="57" cy="42" r="6" fill="#22D3EE" stroke="none"/>
+    <circle cx="79" cy="42" r="6" fill="#14B8A6" stroke="none"/>
+    <path
+      d="M31 91 C47 89 61 80 78 70 L124 66 C140 68 153 76 166 86 C148 86 134 86 119 86 L82 87 C65 87 48 89 31 91 Z"
+      stroke="#F8FAFC"
+      stroke-width="7"
+    />
+    <path d="M72 71 L91 54 L128 56 L143 70" stroke="#F8FAFC" stroke-width="7"/>
+    <path d="M43 100 C70 98 116 98 158 100" stroke="#F8FAFC" stroke-width="6"/>
+    <path d="M164 90 L196 121 L179 125 L171 145 L158 104 Z" fill="#22D3EE" stroke="#070B10" stroke-width="4"/>
+  </g>
+  <text
+    x="225"
+    y="95"
+    fill="#F8FAFC"
+    font-family="Sora, Inter, Arial, sans-serif"
+    font-size="56"
+    font-weight="800"
+    letter-spacing="-2"
+  >AutoDetailing</text>
+  <text
+    x="590"
+    y="95"
+    fill="#22D3EE"
+    font-family="Sora, Inter, Arial, sans-serif"
+    font-size="56"
+    font-weight="800"
+    letter-spacing="-2"
+  >Sites</text>
+  <text
+    x="690"
+    y="95"
+    fill="#22D3EE"
+    font-family="Sora, Inter, Arial, sans-serif"
+    font-size="34"
+    font-weight="800"
+    letter-spacing="-1"
+  >.com</text>
+</svg>
