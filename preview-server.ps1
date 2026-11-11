@@ -13,7 +13,7 @@ Write-Host "Close this window to stop the preview server."
 
 while ($listener.IsListening) {
   $context = $listener.GetContext()
-  $requestPath = [System.Uri]::UnescapeDataString($context.Request.Url.AbsolutePath.TrimStart("/"))
+  $requestPath = [System.Uri]::UnescapeDataString($context.Request.Url.AbsolutePath.TrimStart("/")).TrimEnd("/")
 
   if ([string]::IsNullOrWhiteSpace($requestPath)) {
     $requestPath = "index.html"
@@ -27,10 +27,20 @@ while ($listener.IsListening) {
     continue
   }
 
+  if ([System.IO.Directory]::Exists($fullPath)) {
+    $fullPath = [System.IO.Path]::Combine($fullPath, "index.html")
+  }
+
   if (-not [System.IO.File]::Exists($fullPath)) {
-    $context.Response.StatusCode = 404
-    $context.Response.Close()
-    continue
+    $notFound = [System.IO.Path]::Combine($Root, "404.html")
+    if ([System.IO.File]::Exists($notFound)) {
+      $fullPath = $notFound
+      $context.Response.StatusCode = 404
+    } else {
+      $context.Response.StatusCode = 404
+      $context.Response.Close()
+      continue
+    }
   }
 
   $extension = [System.IO.Path]::GetExtension($fullPath)
@@ -40,6 +50,13 @@ while ($listener.IsListening) {
     ".js" { "text/javascript; charset=utf-8" }
     ".xml" { "application/xml; charset=utf-8" }
     ".txt" { "text/plain; charset=utf-8" }
+    ".svg" { "image/svg+xml" }
+    ".webp" { "image/webp" }
+    ".jpg" { "image/jpeg" }
+    ".jpeg" { "image/jpeg" }
+    ".png" { "image/png" }
+    ".ico" { "image/x-icon" }
+    ".webmanifest" { "application/manifest+json" }
     default { "application/octet-stream" }
   }
 
